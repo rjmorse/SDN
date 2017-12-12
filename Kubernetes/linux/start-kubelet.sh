@@ -1,4 +1,6 @@
 #/bin/bash
+FULL_CLUSTER=$1
+
 KUBEPATH="$HOME/kube"
 KUBECONFIG="$HOME/.kube/config"
 KUBEMANIFEST="$KUBEPATH/manifest"
@@ -13,4 +15,5 @@ KUBEMANIFEST="$KUBEPATH/manifest"
     --hairpin-mode=promiscuous-bridge \
     --container-runtime=docker --v=6 \
     --fail-swap-on=false \
-    --network-plugin=kubenet
+    --network-plugin=kubenet \
+    --pod-cidr=$FULL_CLUSTER

@@ -126,7 +126,7 @@ Now, let's copy the Kubernetes certificate configuration file to the place where
 
 Finally, we're ready to start `kubelet`, the Kubernetes "client." This script runs indefinitely, so open another shell afterward to keep working:
 
-    ~/kube $ sudo ./start-kubelet.sh
+    ~/kube $ sudo ./start-kubelet.sh 192.168.0.0/16
 
 In yet another terminal session, run the Kubeproxy script, passing your cluster CIDR:
 
