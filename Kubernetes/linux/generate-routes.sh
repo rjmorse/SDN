@@ -8,3 +8,4 @@ sudo sysctl -w net.ipv4.ip_forward=1
 
 sudo route add -net $CLUSTER.0.0 netmask 255.255.0.0 dev eth0
 sudo route add -net $CLUSTER.1.0 netmask 255.255.255.0 gw $CLUSTER.1.2 dev eth0
+sudo route add -net $CLUSTER.2.0 netmask 255.255.255.0 gw $CLUSTER.2.2 dev eth0
