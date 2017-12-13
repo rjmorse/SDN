@@ -1,10 +1,10 @@
 #/bin/bash
-FULL_CLUSTER=$1
-
+CLUSTER=$1
+#
 KUBEPATH="$HOME/kube"
 KUBECONFIG="$HOME/.kube/config"
 KUBEMANIFEST="$KUBEPATH/manifest"
-
+#
 ./bin/hyperkube kubelet --kubeconfig=$KUBECONFIG \
     --pod-infra-container-image=gcrio.azureedge.net/google_containers/pause-amd64:3.0 \
     --address=0.0.0.0 --allow-privileged=true --enable-server \
@@ -16,4 +16,4 @@ KUBEMANIFEST="$KUBEPATH/manifest"
     --container-runtime=docker --v=6 \
     --fail-swap-on=false \
     --network-plugin=kubenet \
-    --pod-cidr=$FULL_CLUSTER
+    --pod-cidr=$CLUSTER.0.0/24
